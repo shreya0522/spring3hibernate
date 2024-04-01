@@ -28,6 +28,13 @@ jobs:
           ${{ runner.os }}-maven-
         fail-on-cache-miss: false
 
+    - name: Debug Cache
+      run: |
+        ls -l ~/.m2/repository
+        echo "Cache directory contents:"
+        ls -l ~/.m2/repository
+
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
