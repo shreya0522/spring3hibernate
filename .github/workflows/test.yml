@@ -7,9 +7,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest  #container env called runner that runs our code
-    
-    env:
-      MAVEN_OPTS: "-Dmaven.repo.local=${{ github.workspace }}/repository"
 
     steps: 
 
@@ -22,20 +19,20 @@ jobs:
         java-version: '9'
         distribution: 'adopt'
 
-    - name: Cache Maven dependencies
-      uses: actions/cache@v3
-      with:
-        path: "${{ github.workspace }}/repository"
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-        fail-on-cache-miss: false
+    # - name: Cache Maven dependencies
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: "${{ github.workspace }}/repository"
+    #     key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-maven-
+    #     fail-on-cache-miss: false
 
-    - name: Debug Cache
-      run: |
-        cat ~/.m2/settings.yaml
-        echo "Cache directory contents:"
-        cat ~/.m2/settings.yaml
+    # - name: Debug Cache
+    #   run: |
+    #     cat ~/.m2/settings.yaml
+    #     echo "Cache directory contents:"
+    #     cat ~/.m2/settings.yaml
 
 
     - name: Build with Maven
