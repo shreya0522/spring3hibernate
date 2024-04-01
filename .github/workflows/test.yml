@@ -33,9 +33,9 @@ jobs:
 
     - name: Debug Cache
       run: |
-        ls -l ~/.m2/repository/
+        cat ~/.m2/settings.yaml
         echo "Cache directory contents:"
-        ls -l ~/.m2/repository/
+        cat ~/.m2/settings.yaml
 
 
     - name: Build with Maven
