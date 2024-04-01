@@ -18,6 +18,7 @@ jobs:
       with:
         java-version: '9'
         distribution: 'adopt'
+        maven-version: '4.0.0'
 
     - name: Cache Maven dependencies
       uses: actions/cache@v3
