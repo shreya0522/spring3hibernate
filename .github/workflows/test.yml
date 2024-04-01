@@ -30,9 +30,9 @@ jobs:
 
     - name: Debug Cache
       run: |
-        ls -l ~/.m2/repository
+        ls -l ~/.m2/
         echo "Cache directory contents:"
-        ls -l ~/.m2/repository
+        ls -l ~/.m2/
 
 
     - name: Build with Maven
