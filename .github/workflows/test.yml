@@ -26,6 +26,7 @@ jobs:
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
+        fail-on-cache-miss: false
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
